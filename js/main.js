@@ -22,14 +22,13 @@ var app = {
     },
 
     initialize: function() {
+        this.homeTpl = Handlebars.compile($("#home-tpl").html());
+        this.employeeLiTpl = Handlebars.compile($("#employee-li-tpl").html());
         var self = this;
         this.store = new MemoryStore(function() {
         self.renderHomeView();
         });
     }
-
-    this.homeTpl = Handlebars.compile($("#home-tpl").html());
-    this.employeeLiTpl = Handlebars.compile($("#employee-li-tpl").html());
 
 };
 
