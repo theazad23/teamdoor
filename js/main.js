@@ -1,7 +1,5 @@
 var app = {
 
-    this.homeTpl = Handlebars.compile($("#home-tpl").html());
-    this.employeeLiTpl = Handlebars.compile($("#employee-li-tpl").html());
 
     showAlert: function (message, title) {
         if (navigator.notification) {
@@ -29,6 +27,9 @@ var app = {
         self.renderHomeView();
         });
     }
+
+    this.homeTpl = Handlebars.compile($("#home-tpl").html());
+    this.employeeLiTpl = Handlebars.compile($("#employee-li-tpl").html());
 
 };
 
