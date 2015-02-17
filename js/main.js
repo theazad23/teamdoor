@@ -23,6 +23,9 @@ var app = {
 app.initialize();
 
 var alert = {
+message = 'Notification';
+title = 'title';
+
     showAlert: function (message, title) {
     if (navigator.notification) {
         navigator.notification.alert(message, null, title, 'OK');
