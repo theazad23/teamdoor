@@ -1,2 +1,0 @@
-# teamdoor
-Home automation
