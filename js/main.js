@@ -37,7 +37,7 @@ var app = {
         }
         switch(hash) {
             case '#home':
-                self.slidePage(new HomeView(this.store).render();
+                self.slidePage(this.homePage);
                 break;
             case '#login':
                 self.slidePage(new LoginView().render());
