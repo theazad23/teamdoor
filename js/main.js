@@ -36,6 +36,9 @@ var app = {
             return;
         }
         switch(hash) {
+            case '#home':
+                self.slidePage(this.homePage);
+                break;
             case '#login':
                 self.slidePage(new LoginView().render());
                 break;
