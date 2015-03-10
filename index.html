@@ -8,40 +8,57 @@
 
 <body>
 
+<!-- Home page view -->
 <script id="home-tpl" type="text/x-handlebars-template">
     <div class='header'><h1>Home</h1></div>
-    <div class='search-bar'><input class='search-key' type="search"/></div>
-    <div class='scroll'><ul class='employee-list'></ul></div>
+    <div id='home_container'>
+    	<br>
+    	<a href="#login" class="myButton">Login</a><br><br>
+    	<a href="#functions" class="myButton">Functions</a><br><br>
+    	<a href="#about" class="myButton">About</a>
+    </div>	
 </script>
 
-<script id="employee-li-tpl" type="text/x-handlebars-template">
-    {{#.}}
-    <li><a href="#employees/{{this.id}}">{{this.firstName}} {{this.lastName}}<br/>{{this.title}}</a></li>
-    {{/.}}
+<!-- Login page view -->
+<script id="login-tpl" type="text/x-handlebars-template">
+	<div class='header'><a href='#' class="button header-button header-button-left">Back</a><h1>Login</h1></div>
+		<div id='login_contatiner'>
+			<br>
+			<input type="text" name="user_name"><br>
+			<input type="text" name="password"><br><br>
+			<input type="submit" value="Submit">
+		</div>
+			
 </script>
 
-<script id="employee-tpl" type="text/x-handlebars-template">
-    <div class='header'><a href='#' class="button header-button header-button-left">Back</a><h1>Details</h1></div>
-    <div class='details'>
-        <img class='employee-image' src='img/{{firstName}}_{{lastName}}.jpg' />
-        <h1>{{firstName}} {{lastName}}</h1>
-        <h2>{{title}}</h2>
-        <span class="location"></span>
-        <ul>
-            <li><a href="tel:{{officePhone}}">Call Office<br/>{{officePhone}}</a></li>
-            <li><a href="tel:{{cellPhone}}">Call Cell<br/>{{cellPhone}}</a></li>
-            <li><a href="sms:{{cellPhone}}">SMS<br/>{{cellPhone}}</a></li>
-            <li><a href="#" class="add-location-btn">Add Location</a></li>
-            <li><a href="#" class="add-contact-btn">Add to Contacts</a></li>
+<!-- Function page view -->
+<script id="func-tpl" type="text/x-handlebars-template">
+	 <div class='header'><a href='#' class="button header-button header-button-left">Back</a><h1>Functions</h1></div>
+	 <div id='function_container'>	
+	 	<br>
+	 	<button type="button" class="myButton">Open Front Door</button><br><br>
+	 	<button type="button" class="myButton">Open Garage Door</button><br><br>
+		<button type="button" class="myButton">Secure House</button><br><br>
+	 	<button type="button" class="myButton">Unsecure House</button>	
+	 </div>
+</script>
 
-        </ul>
-    </div>
+<!-- About page view -->
+<script id="abt-tpl" type="text/x-handlebars-template">
+	 <div class='header'><a href='#' class="button header-button header-button-left">Back</a><h1>About</h1></div>
+	 <div id='about_container'>
+	 	<p>This is the about page!</p>
+	 </div>
+
 </script>
 
 <script src="lib/jquery-1.8.2.min.js"></script>
 <script src="js/storage/memory-store.js"></script>
 <script src="js/HomeView.js"></script>
 <script src="js/EmployeeView.js"></script>
+<script src="js/LoginView.js"></script>
+<script src="js/FunctionsView.js"></script>
+<script src="js/AboutView.js"></script>
 <script src="js/main.js"></script>
 
 

@@ -35,13 +35,21 @@ var app = {
             }
             return;
         }
-        var match = hash.match(this.detailsURL);
-        if (match) {
-            this.store.findById(Number(match[1]), function(employee) {
-                self.slidePage(new EmployeeView(employee).render());
-            });
+        switch(hash) {
+            case '#login':
+                self.slidePage(new LoginView().render());
+                break;
+            case '#functions':
+                self.slidePage(new FunctionsView().render());
+                break;
+            case '#about':
+                self.slidePage(new AboutView().render()); 
+                break;
+            default:
+                break;
         }
-    },
+    },    
+    
 
     showAlert: function (message, title) {
         if (navigator.notification) {
@@ -54,7 +62,7 @@ var app = {
     slidePage: function(page) {
  
         var currentPageDest,
-            self = this;
+        self = this;
  
         // If there is no current page (app just started) -> No transition: Position new page in the view port
         if (!this.currentPage) {
@@ -92,7 +100,6 @@ var app = {
 
     initialize: function() {
         var self = this;
-        this.detailsURL = /^#employees\/(\d{1,})/;
         this.registerEvents();
         this.store = new MemoryStore(function() {
             self.route();
