@@ -22,6 +22,23 @@ var EmployeeView = function(employee) {
         	});
     	return false;
 	};
+
+	this.addToContacts = function(event) {
+    	event.preventDefault();
+    	console.log('addToContacts');
+    	if (!navigator.contacts) {
+        	app.showAlert("Contacts API not supported", "Error");
+        	return;
+    	}
+    	var contact = navigator.contacts.create();
+    	contact.name = {givenName: employee.firstName, familyName: employee.lastName};
+    	var phoneNumbers = [];
+    	phoneNumbers[0] = new ContactField('work', employee.officePhone, false);
+    	phoneNumbers[1] = new ContactField('mobile', employee.cellPhone, true); // preferred number
+    	contact.phoneNumbers = phoneNumbers;
+    	contact.save();
+    	return false;
+	};
  
     this.initialize();
 
