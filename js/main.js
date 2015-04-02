@@ -41,7 +41,7 @@ var app = {
                 break;
             case '#login':
                 //self.slidePage(new LoginView().render());
-                window.location = "192.168.0.226:3000/"
+                window.location = "http://192.168.0.226:3000/"
                 break;
             case '#functions':
                 self.slidePage(new FunctionsView().render());
