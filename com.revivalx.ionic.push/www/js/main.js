@@ -49,8 +49,6 @@ var app = {
             case '#about':
                 self.slidePage(new AboutView().render()); 
                 break;
-            case'#':
-                break;
             default:
                 break;
         }
