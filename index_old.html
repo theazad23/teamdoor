@@ -1,36 +1,80 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+<script src="css/source-sans-pro.js"></script>
+<script src="lib/handlebars.js"></script>
+<script src="cordova.js"></script>
+<script type="text/javascript" src="js\PushNotification.js"></script>
+<script type="text/javascript" src="js\PushCustom.js"></script>
+<script src="js/app.js"></script>
+<head>
+<link href="css/styles.css" rel="stylesheet">
+</head>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+<body>
 
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+<!-- Home page view -->
+<script id="home-tpl" type="text/x-handlebars-template">
+    <div class='header'><h1>Home</h1></div>
+    <div id='home_container'>
+      <br>
+      <a href="http://192.168.0.24:3000/" class="myButton">Login</a><br><br>
+      <a href="#functions" class="myButton">Functions</a><br><br>
+      <a href="#about" class="myButton">About</a>
+    </div>  
+</script>
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-    <script type="text/javascript" src="js\PushNotification.js"></script>
-    <script type="text/javascript" src="js\PushCustom.js"></script>
-    
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
-  </head>
-  <body ng-app="starter">
+<!-- Login page view -->
+<script id="login-tpl" type="text/x-handlebars-template">
+  <div class='header'><a href='#home' class="button header-button header-button-left">Back</a><h1>Login</h1></div>
+    <div id='login_contatiner'>
+      <br>
+      <input type="text" name="user_name"><br>
+      <input type="text" name="password"><br><br>
+      <input type="submit" value="Submit"><br><br>
+    </div>
+      
+</script>
 
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
-    </ion-pane>
-  </body>
+<!-- Function page view -->
+<script id="func-tpl" type="text/x-handlebars-template">
+   <div class='header'><a href='#home' class="button header-button header-button-left">Back</a><h1>Functions</h1></div>
+   <div id='function_container'>  
+    <br>
+    <button type="button" class="myButton">Open Front Door</button><br><br>
+    <button type="button" class="myButton">Open Garage Door</button><br><br>
+    <button type="button" class="myButton">Secure House</button><br><br>
+    <button type="button" class="myButton">Unsecure House</button>  
+   </div>
+</script>
+
+<!-- About page view -->
+<script id="abt-tpl" type="text/x-handlebars-template">
+   <div class='header'><a href='#home' class="button header-button header-button-left">Back</a><h1>About</h1></div>
+   <div id='about_container'>
+    <p>This is the about page!</p>
+   </div>
+</script>
+
+<!-- Location page view -->
+<script id="abt-tpl" type="text/x-handlebars-template">
+   <div class='header'><a href='#home' class="button header-button header-button-left">Back</a><h1>Locations</h1></div>
+   <div id='location_container'>
+    <p>This is the location page!</p>
+   </div>
+</script>
+
+<script src="lib/jquery-1.8.2.min.js"></script>
+<script src="js/storage/memory-store.js"></script>
+<script src="js/HomeView.js"></script>
+<script src="js/EmployeeView.js"></script>
+<script src="js/LoginView.js"></script>
+<script src="js/FunctionsView.js"></script>
+<script src="js/AboutView.js"></script>
+<script src="js/main.js"></script>
+
+
+
+
+</body>
+<script src="phonegap.js"></script>
 </html>
